@@ -792,7 +792,7 @@ make_uri (guestfs_h *g, const char *scheme, const char *user,
     break;
   }
 
-  return (char *) xmlSaveUri (&uri);
+  return xmlURIUnescapeString((char *) xmlSaveUri (&uri), -1, NULL);
 }
 
 /**
